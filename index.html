@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        roboto: ["Roboto", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+
+<body>
+    <div class="font-roboto">
+        <div class="border border-[#d5cdcd] py-8 px-5 mb-10 text-center">
+            <img class="mb-8 w-[150px] mx-auto"
+                src="https://d2clawv67efefq.cloudfront.net/ccbp-dynamic-webapps/wiki-logo-img.png" />
+
+            <button id="themeToggle"
+                class="mb-4 px-5 py-2 bg-gray-200 rounded-lg shadow hover:bg-gray-300 transition">
+                🌙 Dark Mode
+            </button>
+                
+            <div class="flex items-center gap-2 relative">
+
+                <input
+                placeholder="Type a keyword and press Enter to search"
+                type="search"
+                class="flex-grow text-lg border border-[#d5cdcd] rounded px-3 py-2"
+                id="searchInput"
+                />
+
+                <button
+                id="voiceBtn"
+                class="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">
+                🎤
+                </button>
+
+            </div>
+            <div id="suggestions"
+                class="bg-white text-black rounded shadow-md mt-1 hidden absolute w-full z-10">
+            </div>
+        </div>
+
+        <div class="hidden" id="spinner">
+            <div class="flex justify-center">
+                <div class="animate-spin rounded-full h-8 w-8 border-b-2 border-gray-900" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-6 p-5" id="searchResults"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
